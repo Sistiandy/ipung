@@ -56,6 +56,6 @@ $route['admin/(:any)/(:any)/add'] = "admin/$1/add_$2";
 $route['admin/(:any)/edit/(:num)'] = "admin/$1/add/$2";
 $route['admin'] = "admin/dashboard";
 
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'base';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
