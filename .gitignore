@@ -1,7 +1,6 @@
 .DS_Store
 *.swp
 *.bak
-.htaccess
 development/
 uploads/
 nbproject/
