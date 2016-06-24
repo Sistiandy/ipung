@@ -55,7 +55,7 @@
   font-weight:normal;font-style:normal;
 }
 html {
-  
+
   background: white;
   color: black;
   -webkit-text-size-adjust: 100%;
@@ -63,7 +63,7 @@ html {
 }
 body {
   margin: 0;
-    font-family:"Roboto Light";
+  font-family:"Roboto Light";
 }
 article,
 aside,
@@ -124,7 +124,11 @@ select,
 textarea {
   font-family: sans-serif;
 }
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: auto;
 
+}
 a {
   background: transparent;
 }
