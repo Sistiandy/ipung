@@ -60,6 +60,7 @@ class Catalog extends CI_Controller {
 
     // Add Catalog and Update
     public function add($id = NULL) {
+        $this->load->model('Brand_model');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('catalog_name', 'Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('catalog_description', 'Description', 'trim|required|xss_clean');
@@ -117,7 +118,8 @@ class Catalog extends CI_Controller {
             if (!is_null($id)) {
                 $data['catalog'] = $this->Catalog_model->get(array('id' => $id));
             }
-            $data['category'] = $this->Catalog_model->get_category();
+            $data['ngapp'] = 'ng-app="catalogApp"';
+            $data['brand'] = $this->Brand_model->get();
             $data['title'] = $data['operation'] . ' Catalog';
             $data['main'] = 'admin/catalog/catalog_add';
             $this->load->view('admin/layout', $data);

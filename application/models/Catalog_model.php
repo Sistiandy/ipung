@@ -53,7 +53,7 @@ class Catalog_model extends CI_Model {
             catalog_virtual_stock, catalog_image, catalog_for_sale,
             catalog_input_date, catalog_last_update');
         $this->db->select('brand_brand_id, brand_name');
-        $this->db->select('user_user_id, user_name');
+        $this->db->select('catalog.user_user_id, user_name');
         $this->db->join('brand', 'brand.brand_id = catalog.brand_brand_id', 'left');
         $this->db->join('user', 'user.user_id = catalog.user_user_id', 'left');
         $res = $this->db->get('catalog');

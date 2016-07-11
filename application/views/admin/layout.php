@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,7 +24,7 @@
     <!-- Custom styling plus plugins -->
     <link href="<?php echo media_url() ?>/css/custom.css" rel="stylesheet">
 
-    <script src="<?php echo media_url() ?>/js/jquery.min.js"></script>
+    <script src="<?php echo media_url() ?>/js/jquery-1.11.1.min.js"></script>
     <script src="<?php echo media_url(); ?>/js/angular.min.js"></script>
     <script src="<?php echo media_url(); ?>/js/mm.js"></script>
 
@@ -45,7 +45,7 @@
         </head>
 
 
-        <body class="nav-md">
+        <body class="nav-md" <?php echo isset($ngapp) ? $ngapp : null; ?>>
 
             <div class="container body">
 

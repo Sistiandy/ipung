@@ -99,7 +99,7 @@ if (isset($posts)) {
                     <button name="action" type="submit" value="save" class="btn btn-success btn-form"><i class="fa fa-check"></i> Simpan</button>
                     <a href="<?php echo site_url('admin/posts'); ?>" class="btn btn-info btn-form"><i class="fa fa-arrow-left"></i> Batal</a>
                     <?php if (isset($posts)): ?>
-                        <a href="<?php echo site_url('admin/posts/delete/' . $posts['posts_id']); ?>" class="btn btn-danger btn-form" ><i class="fa fa-trash"></i> Hapus</a>
+                        <a  href="#confirm-del" data-toggle="modal" class="btn btn-danger btn-form" ><i class="fa fa-trash"></i> Hapus</a>
                     <?php endif; ?>
                 </div>
             </div>

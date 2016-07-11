@@ -113,6 +113,7 @@ class Posts extends CI_Controller {
             if (!is_null($id)) {
                 $data['posts'] = $this->Posts_model->get(array('id' => $id));
             }
+            $data['ngapp'] = 'ng-app="ipungApp"';
             $data['category'] = $this->get_category();
             $data['title'] = $data['operation'] . ' Posting';
             $data['main'] = 'admin/posts/posts_add';
