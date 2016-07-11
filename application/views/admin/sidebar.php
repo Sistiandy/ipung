@@ -10,6 +10,13 @@
                 </ul>
             </li>
 
+            <li><a><i class="fa fa-newspaper-o"></i> Slide <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: none">
+                    <li><a href="<?php echo site_url('admin/slide') ?>">Daftar Slide</a>
+                    </li>
+                </ul>
+            </li>
+
             <li><a><i class="fa fa-newspaper-o"></i> Posting <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/posts') ?>">Daftar Posting</a>
@@ -22,13 +29,6 @@
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/catalog') ?>">Daftar Katalog</a>
                     <li><a href="<?php echo site_url('admin/catalog/category') ?>">Kategori Katalog</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li><a><i class="fa fa-newspaper-o"></i> Brand <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu" style="display: none">
-                    <li><a href="<?php echo site_url('admin/catalog') ?>">Daftar Brand</a>
                     </li>
                 </ul>
             </li>
