@@ -22,11 +22,24 @@
                 <?php
                 if (!empty($catalog)) {
                     foreach ($catalog as $row) {
+                    $i = 1;
                         ?>
                         <tbody>
                             <tr>
                                 <td ><?php echo $row['catalog_name']; ?></td>
-                                <td ><?php echo 'category'; ?></td>
+                                <td >
+                                    <?php
+                                    foreach ($category as $key) {
+                                        if ($key['catalog_catalog_id'] == $row['catalog_id']):
+                                            if ($i > 1) {
+                                                echo ', ';
+                                            }
+                                            echo $key['category_name'];
+                                            $i++;
+                                        endif;
+                                    }
+                                    ?>
+                                </td>
                                 <td ><?php echo $row['brand_name']; ?></td>
                                 <td ><?php echo $row['catalog_real_stock']; ?></td>
                                 <td ><?php echo ($row['catalog_for_sale'] == 0) ? 'Tidak dijual' : 'Dijual'; ?></td>

@@ -28,12 +28,12 @@ class Api extends CI_Controller {
                 );
             }
         } else {
-            $categoryAct = $this->Catalog_model->get_catalog_category(array('catalog_id' => $id));
+            $categoryAct = $this->Catalog_model->get_catalog_has_category(array('catalog_id' => $id));
             $category = $this->Catalog_model->get_category();
 
             $res_CategoryAct = array();
             foreach ($categoryAct as $row) {
-                $res_CategoryAct[] = $row['category_category_id'];
+                $res_CategoryAct[] = $row['catalog_category_category_id'];
             }
 
             foreach ($category as $key) {

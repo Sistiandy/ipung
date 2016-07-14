@@ -268,7 +268,7 @@ class Catalog_model extends CI_Model {
         $this->db->select('catalog_category_category_id, category_name');
         
         $this->db->join('catalog', 'catalog.catalog_id = catalog_has_catalog_category.catalog_catalog_id', 'left');
-        $this->db->join('catalog_category', 'catalog_has_catalog_category.catalog_category_category_id = catalog_has_catalog_category.catalog_has_catalog_category_id', 'left');
+        $this->db->join('catalog_category', 'catalog_category.category_id = catalog_has_catalog_category.catalog_category_category_id', 'left');
         $res = $this->db->get('catalog_has_catalog_category');
 
         if(isset($params['id']))

@@ -26,7 +26,7 @@ class Catalog extends CI_Controller {
     public function index($offset = NULL) {
         $this->load->library('pagination');
         $data['catalog'] = $this->Catalog_model->get(array('limit' => 10, 'offset' => $offset, 'status' => TRUE));
-        $data['category'] = $this->Catalog_model->get_category();
+        $data['category'] = $this->Catalog_model->get_catalog_has_category();
         $config['base_url'] = site_url('admin/catalog/index');
         $config['total_rows'] = count($this->Catalog_model->get(array('status' => TRUE)));
         $this->pagination->initialize($config);
@@ -41,6 +41,7 @@ class Catalog extends CI_Controller {
             redirect('admin/catalog');
         }
         $data['catalog'] = $this->Catalog_model->get(array('id' => $id));
+        $data['category'] = $this->Catalog_model->get_catalog_has_category(array('catalog_id' => $id));
         $data['title'] = 'Detail posting';
         $data['main'] = 'admin/catalog/catalog_view';
         $this->load->view('admin/layout', $data);

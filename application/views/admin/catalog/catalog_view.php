@@ -32,7 +32,20 @@
                         <tr>
                             <td>Kategori</td>
                             <td>:</td>
-                            <td><?php echo 'Kategori' ?></td>
+                            <td>
+                                <?php
+                                $i=1;
+                                foreach ($category as $key) {
+                                    if ($key['catalog_catalog_id'] == $catalog['catalog_id']):
+                                        if ($i > 1) {
+                                            echo ', ';
+                                        }
+                                        echo $key['category_name'];
+                                        $i++;
+                                    endif;
+                                }
+                                ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Brand</td>
