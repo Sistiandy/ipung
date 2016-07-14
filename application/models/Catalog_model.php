@@ -123,6 +123,10 @@ class Catalog_model extends CI_Model {
             $this->db->set('catalog_last_update', $data['catalog_last_update']);
         }
         
+         if(isset($data['catalog_input_date'])) {
+            $this->db->set('catalog_input_date', $data['catalog_input_date']);
+        }
+        
          if(isset($data['catalog_is_published'])) {
             $this->db->set('catalog_is_published', $data['catalog_is_published']);
         }
@@ -264,7 +268,7 @@ class Catalog_model extends CI_Model {
         $this->db->select('catalog_category_category_id, category_name');
         
         $this->db->join('catalog', 'catalog.catalog_id = catalog_has_catalog_category.catalog_catalog_id', 'left');
-        $this->db->join('catalog_category', 'catalog_has_catalog_category.category_id = catalog_has_catalog_category.catalog_has_catalog_category_id', 'left');
+        $this->db->join('catalog_category', 'catalog_has_catalog_category.catalog_category_category_id = catalog_has_catalog_category.catalog_has_catalog_category_id', 'left');
         $res = $this->db->get('catalog_has_catalog_category');
 
         if(isset($params['id']))

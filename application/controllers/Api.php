@@ -49,5 +49,20 @@ class Api extends CI_Controller {
                 ->set_output(json_encode($res));
     }
 
+    public function get_brand() {
+        $this->load->model('Brand_model');
+
+            $brand = $this->Brand_model->get();
+            foreach ($brand as $key) {
+                $res[] = array(
+                    'brand_id' => $key['brand_id'],
+                    'brand_name' => $key['brand_name'],
+                );
+            }
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($res));
+    }
+
 }
 

@@ -65,9 +65,7 @@ class Catalog extends CI_Controller {
         $this->form_validation->set_rules('catalog_name', 'Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('catalog_description', 'Description', 'trim|required|xss_clean');
         $this->form_validation->set_rules('brand_id', 'Brand', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('catalog_weight', 'Weight', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('catalog_selling_price', 'Selling Price', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('catalog_foe_sale', 'For sale', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('catalog_for_sale', 'For sale', 'trim|required|xss_clean');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
         $data['operation'] = is_null($id) ? 'Tambah' : 'Sunting';
 
@@ -95,6 +93,35 @@ class Catalog extends CI_Controller {
             $params['catalog_for_sale'] = $this->input->post('catalog_for_sale');
             $status = $this->Catalog_model->add($params);
 
+            
+//            Add Multi Category
+            $dataCategory = $this->input->post('category_id');
+            $ex = $this->Catalog_model->get_catalog_has_category(array('catalog_id' => $status));
+            $exist = array();
+            foreach ($ex as $val) {
+                $exist[] = $val['category_category_id'];
+            }
+
+            $ex_diff = array_diff($exist, $dataCategory);
+            if (count($ex_diff) > 0) {
+                $this->db->where('catalog_catalog_id', $status);
+                $this->db->where_in('category_category_id', $ex_diff);
+                $this->db->delete('catalog_has_catalog_category');
+            }
+
+            // Update/Insert new data
+            $new_diff = array_diff($dataCategory, $exist);
+            if (count($new_diff) > 0) {
+                $category = array();
+                foreach ($new_diff as $categoryID) {
+                    $category[] = array(
+                        'catalog_catalog_id' => $status,
+                        'catalog_category_category_id' => $categoryID,
+                    );
+                }
+
+                $this->db->insert_batch('catalog_has_catalog_category', $category);
+            }
 
             // activity log
             $this->Activity_log_model->add(

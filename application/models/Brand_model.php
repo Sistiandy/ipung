@@ -42,7 +42,7 @@ class Brand_model extends CI_Model {
             $this->db->order_by('brand_last_update', 'desc');
         }
 
-        $this->db->select('brand.brand_id, brand_name
+        $this->db->select('brand.brand_id, brand_name,
             user_user_id, user.user_name,
             brand_input_date, brand_last_update');
         $this->db->join('user', 'user.user_id = brand.user_user_id', 'left');

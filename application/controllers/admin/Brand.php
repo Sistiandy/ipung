@@ -2,7 +2,7 @@
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
- 
+
 /**
  * Brand controllers class
  *
@@ -48,7 +48,7 @@ class Brand extends CI_Controller {
     // Add Brand and Update
     public function add($id = NULL) {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('brand_name', 'Name', 'trim|required|xss_clean');        
+        $this->form_validation->set_rules('brand_name', 'Name', 'trim|required|xss_clean');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
         $data['operation'] = is_null($id) ? 'Tambah' : 'Sunting';
 
@@ -56,27 +56,31 @@ class Brand extends CI_Controller {
 
             if ($this->input->post('brand_id')) {
                 $params['brand_id'] = $this->input->post('brand_id');
-            } else {                
+            } else {
                 
             }
 
-            $params['brand_name'] = $this->input->post('brand_name');            
-            $params['user_id'] = $this->session->userdata('user_id');            
+            $params['brand_name'] = $this->input->post('brand_name');
+            $params['user_id'] = $this->session->userdata('user_id');
             $status = $this->Brand_model->add($params);
 
             // activity log
             $this->Activity_log_model->add(
-                array(
-                    'log_date' => date('Y-m-d H:i:s'),
-                    'user_id' => $this->session->userdata('user_id'),
-                    'log_module' => 'Brand',
-                    'log_action' => $data['operation'],
-                    'log_info' => 'ID:'.$status.';Title:' . $params['brand_name']
+                    array(
+                        'log_date' => date('Y-m-d H:i:s'),
+                        'user_id' => $this->session->userdata('user_id'),
+                        'log_module' => 'Brand',
+                        'log_action' => $data['operation'],
+                        'log_info' => 'ID:' . $status . ';Title:' . $params['brand_name']
                     )
-                );
+            );
 
-            $this->session->set_flashdata('success', $data['operation'] . ' Brand berhasil');
-            redirect('admin/brand');
+            if ($this->input->is_ajax_request()) {
+                echo $status;
+            } else {
+                $this->session->set_flashdata('success', $data['operation'] . ' Brand berhasil');
+                redirect('admin/brand');
+            }
         } else {
             if ($this->input->post('brand_id')) {
                 redirect('admin/brand/edit/' . $this->input->post('brand_id'));
@@ -98,14 +102,14 @@ class Brand extends CI_Controller {
             $this->Brand_model->delete($this->input->post('del_id'));
             // activity log
             $this->Activity_log_model->add(
-                array(
-                    'log_date' => date('Y-m-d H:i:s'),
-                    'user_id' => $this->session->userdata('user_id'),
-                    'log_module' => 'Brand',
-                    'log_action' => 'Hapus',
-                    'log_info' => 'ID:' . $this->input->post('del_id') . ';Title:' . $this->input->post('del_name')
+                    array(
+                        'log_date' => date('Y-m-d H:i:s'),
+                        'user_id' => $this->session->userdata('user_id'),
+                        'log_module' => 'Brand',
+                        'log_action' => 'Hapus',
+                        'log_info' => 'ID:' . $this->input->post('del_id') . ';Title:' . $this->input->post('del_name')
                     )
-                );
+            );
             $this->session->set_flashdata('success', 'Hapus Brand berhasil');
             redirect('admin/brand');
         } elseif (!$_POST) {

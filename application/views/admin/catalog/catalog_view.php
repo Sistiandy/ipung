@@ -62,7 +62,7 @@
                         <tr>
                             <td>Penulis</td>
                             <td>:</td>
-                            <td><?php echo $catalog['user_full_name']; ?></td>
+                            <td><?php echo $catalog['user_name']; ?></td>
                         </tr>
                     </tbody>
                 </table>
