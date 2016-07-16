@@ -10,14 +10,14 @@
                 </ul>
             </li>
 
-            <li><a><i class="fa fa-newspaper-o"></i> Slide <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-caret-square-o-right"></i> Slide <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/slide') ?>">Daftar Slide</a>
                     </li>
                 </ul>
             </li>
 
-            <li><a><i class="fa fa-newspaper-o"></i> Katalog <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-shopping-cart"></i> Katalog <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/catalog') ?>">Daftar Katalog</a>
                     <li><a href="<?php echo site_url('admin/catalog/category') ?>">Kategori Katalog</a>
@@ -25,7 +25,7 @@
                 </ul>
             </li>
 
-            <li><a><i class="fa fa-newspaper-o"></i> Testimoni <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-users"></i> Testimoni <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/testimoni') ?>">Daftar Testimoni</a>
                     </li>
@@ -48,7 +48,7 @@
                 </ul>
             </li>
 
-            <li><a><i class="fa fa-users"></i> Pengguna <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-user"></i> Pengguna <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/user') ?>">Daftar Pengguna</a>
                     </li>
