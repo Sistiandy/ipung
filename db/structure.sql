@@ -279,6 +279,24 @@ CREATE  TABLE IF NOT EXISTS `slide` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `testimoni`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `testimoni` (
+  `testimoni_id` INT NOT NULL AUTO_INCREMENT ,
+  `testimoni_user_name` VARCHAR(255) NULL ,
+  `testimoni_user_job` VARCHAR(255) NULL ,
+  `testimoni_user_email` VARCHAR(100) NULL ,
+  `testimoni_user_address` TEXT NULL ,
+  `testimoni_user_image` VARCHAR(255) NULL ,
+  `testimoni_user_comment` TEXT NULL ,
+  `testimoni_is_published` TINYINT(1) NULL DEFAULT 0 ,
+  `testimoni_input_date` TIMESTAMP NULL ,
+  `testimoni_last_update` TIMESTAMP NULL ,
+  PRIMARY KEY (`testimoni_id`) )
+ENGINE = InnoDB;
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
