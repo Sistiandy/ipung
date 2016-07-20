@@ -27,24 +27,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Salon IPung</a>
+                <a class="navbar-brand" href="<?php echo site_url() ?>">Salon IPung</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="ion-email"></i> Contact Person <span class="badge">0</span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-mobile"></i> Contact Person </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="fa fa-fw fa-tag"></i> <span class="badge">BBM</span> 098675 </a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">WA</span> 089602824560</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">SMS</span> 08962876288</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Ig</span>  @Ipung</a></li>
+                            <li><a href="#"><i class="fa fa-phone-square"></i>  098675 </a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> 089602824560</a></li>
+                            <li><a href="#"><i class="fa fa-facebook-square"></i> 08962876288</a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i> @Ipung</a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i> @Ipung</a></li>
                         </ul>
                     </li>
                     <li class="active"><a href="#"> +1 344 5345 5345  <span class="sr-only">(current)</span></a></li>
                 </ul>
-                <form class="navbar-form navbar-right search-form" role="search">
-                    <input type="text" class="form-control" placeholder="Search" />
-                </form>
             </div>
         </div>
     </nav>

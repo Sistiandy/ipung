@@ -264,7 +264,7 @@ class Catalog_model extends CI_Model {
         }
 
         $this->db->select('catalog_has_catalog_category_id');
-        $this->db->select('catalog_catalog_id, catalog_name');
+        $this->db->select('catalog.catalog_id, catalog_catalog_id, catalog_name, catalog_image, catalog_input_date');
         $this->db->select('catalog_category_category_id, category_name');
         
         $this->db->join('catalog', 'catalog.catalog_id = catalog_has_catalog_category.catalog_catalog_id', 'left');

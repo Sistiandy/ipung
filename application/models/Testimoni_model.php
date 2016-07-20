@@ -81,7 +81,7 @@ class Testimoni_model extends CI_Model {
         }
         
          if(isset($data['testimoni_user_job'])) {
-            $this->db->set('testimoni_user_job', $data['testimoni_job']);
+            $this->db->set('testimoni_user_job', $data['testimoni_user_job']);
         }
         
          if(isset($data['testimoni_user_email'])) {

@@ -119,7 +119,7 @@
                                                 <center>
                                                     <?php echo form_open(site_url('admin/auth/logout')) ?>
                                                     <input type="hidden" name="location" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']) ?>">
-                                                    <button class="btn btn-xs btn-danger" id="btn-lgout" type="submit">
+                                                    <button class="btn btn-xs btn-danger col-md-12" id="btn-lgout" type="submit">
                                                         <i class="fa fa-sign-out pull-right"></i> Log out
                                                     </button>
                                                     <?php echo form_close() ?>

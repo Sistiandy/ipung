@@ -100,7 +100,7 @@ class Catalog extends CI_Controller {
             $ex = $this->Catalog_model->get_catalog_has_category(array('catalog_id' => $status));
             $exist = array();
             foreach ($ex as $val) {
-                $exist[] = $val['category_category_id'];
+                $exist[] = $val['catalog_category_category_id'];
             }
 
             $ex_diff = array_diff($exist, $dataCategory);

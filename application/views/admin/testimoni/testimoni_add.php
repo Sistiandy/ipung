@@ -8,14 +8,14 @@ if (isset($testimoni)) {
     $EmailValue = $testimoni['testimoni_user_email'];
     $AddressValue = $testimoni['testimoni_user_address'];
     $CommentValue = $testimoni['testimoni_user_comment'];
-    $publishValue = $testimoni['testimoni_is_published'];
+    $PublishValue = $testimoni['testimoni_is_published'];
 } else {
     $NameValue = set_value('testimoni_user_name');
     $JobValue = set_value('testimoni_user_job');
-    $EmailValue = set_value('testimoni_email');
+    $EmailValue = set_value('testimoni_user_email');
     $AddressValue = set_value('testimoni_user_address');
     $CommentValue = set_value('testimoni_user_comment');
-    $inputStatus = set_value('testimoni_is_published');
+    $PublishValue = set_value('testimoni_is_published');
 }
 ?>
 <div class="col-md-12 col-sm-12 col-xs-12 main post-inherit">
@@ -70,12 +70,12 @@ if (isset($testimoni)) {
                     <label>Status Publikasi</label>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="testimoni_is_published" value="0" <?php echo ($inputStatus == 0) ? 'checked' : ''; ?>> Draft
+                            <input type="radio" name="testimoni_is_published" value="0" <?php echo ($PublishValue == 0) ? 'checked' : ''; ?>> Draft
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="testimoni_is_published" value="1" <?php echo ($inputStatus == 1) ? 'checked' : ''; ?>> Terbit
+                            <input type="radio" name="testimoni_is_published" value="1" <?php echo ($PublishValue == 1) ? 'checked' : ''; ?>> Terbit
                         </label>
                     </div>
                 </div>

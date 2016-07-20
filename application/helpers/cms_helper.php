@@ -39,6 +39,26 @@ if (!function_exists('pretty_date')) {
         return $date_pretty;
     }
 
+    if (!function_exists('catalog_url')) {
+
+        function catalog_url($catalog = array()) {
+
+            list($date, $time) = explode(' ', $catalog['catalog_input_date']);
+            list($year, $month, $day) = explode('-', $date);
+            return site_url('catalog/detail/' . $year . '/' . $month . '/' . $day . '/' . $catalog['catalog_id'] . '/' . url_title($catalog['catalog_name'], '-', TRUE) . '.html');
+        }
+
+    }
+
+    if (!function_exists('catalog_category_url')) {
+
+        function catalog_category_url($category = array()) {
+
+            return site_url('catalog/category/' . $category['category_id'] . '/' . url_title($category['category_name'], '-', TRUE) . '.html');
+        }
+
+    }
+
     if (!function_exists('template_media_url')) {
 
         function template_media_url($name = '') {

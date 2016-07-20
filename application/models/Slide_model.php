@@ -22,6 +22,11 @@ class Slide_model extends CI_Model {
         {
             $this->db->where('slide.slide_id', $params['id']);
         }
+        
+        if(isset($params['status']))
+        {
+            $this->db->where('slide.slide_is_published', $params['status']);
+        }
 
         if(isset($params['limit']))
         {

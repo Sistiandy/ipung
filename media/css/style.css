@@ -14,14 +14,7 @@
   url("../fonts/Lato-Light.svg#Lato-Light") format("svg");
   font-weight:normal;font-style:normal;
 }
-@font-face {
-  font-family:"Oswald Light";
-  src:url("../fonts/Oswald-Light.eot?") format("eot"),
-  url("../fonts/Oswald-Light.woff") format("woff"),
-  url("../fonts/Oswald-Light.ttf") format("truetype"),
-  url("../fonts/Oswald-Light.svg#Oswald-Light") format("svg");
-  font-weight:normal;font-style:normal;
-}
+
 @font-face {
   font-family:"Roboto Thin";
   src:url("../fonts/Roboto-Thin.eot?") format("eot"),
@@ -2124,7 +2117,7 @@ table {
   }
 }
 body {
-  font-family: "Open Sans", serif;
+  font-family: "Lato Light";
   font-weight: 300;
   font-size: 15px;
   line-height: 24px;
@@ -2301,7 +2294,7 @@ body {
   background: #f1f1f1;
   padding: 5px 10px;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 13px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -2310,11 +2303,12 @@ body {
   color: inherit;
   padding: 0 10px;
   display: inline-block;
+  color: #1da1f2;
 }
-.breadcrumbs span {
+.nav-bread span{
   display: inline-block;
   padding: 0 10px;
-  color: #1da1f2;
+  color: #818c8d;
 }
 
 .slider {
@@ -2652,7 +2646,7 @@ figure img {
   nav.navbar-findcond ul.navbar-nav a:hover,
   nav.navbar-findcond ul.navbar-nav a:visited,
   nav.navbar-findcond ul.navbar-nav a:focus,
-  nav.navbar-findcond ul.navbar-nav a:active { background: #014cfe; color: #fff;}
+  nav.navbar-findcond ul.navbar-nav a:active { background: #2980b9; color: #fff;}
   nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444; color: #fff;}
   nav.navbar-findcond li.divider { background: #ccc; }
   nav.navbar-findcond button.navbar-toggle { background: #f14444; border-radius: 2px; }
@@ -2696,8 +2690,6 @@ figure img {
 
   .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
 
-
-
   .gallery
   {
     display: inline-block;
@@ -2705,3 +2697,16 @@ figure img {
   }
 
 
+/*============== Style Sistiandy ============*/
+
+.category-base{
+    font-size:12px;
+}
+
+.top-space{
+    margin-top: 170px;
+}
+
+.nav-bread{
+    margin-left: 50px;
+}

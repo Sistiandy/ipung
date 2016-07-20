@@ -25,7 +25,7 @@ class Testimoni extends CI_Controller {
     // Testimoni view in list
     public function index($offset = NULL) {
         $this->load->library('pagination');
-        $data['testimoni'] = $this->Testimoni_model->get(array('limit' => 10, 'offset' => $offset, 'status' => TRUE));
+        $data['testimoni'] = $this->Testimoni_model->get(array('limit' => 10, 'offset' => $offset));
         $config['base_url'] = site_url('admin/testimoni/index');
         $config['total_rows'] = count($this->Testimoni_model->get(array('status' => TRUE)));
         $this->pagination->initialize($config);
@@ -59,7 +59,7 @@ class Testimoni extends CI_Controller {
 
         if ($_POST AND $this->form_validation->run() == TRUE) {
             if ($this->input->post('inputGambarCurrent')) {
-                $params['testimoni_image'] = $this->input->post('inputGambarCurrent');
+                $params['testimoni_user_image'] = $this->input->post('inputGambarCurrent');
             } 
 
             if ($this->input->post('testimoni_id')) {
@@ -69,9 +69,9 @@ class Testimoni extends CI_Controller {
             }
 
             $params['testimoni_last_update'] = date('Y-m-d H:i:s');
-            $params['testimoni_user_name'] = $this->input->post('testimoni_title');
-            $params['testimoni_user_job'] = $this->input->post('testimoni_job');
-            $params['testimoni_user_email'] = $this->input->post('testimoni_email');
+            $params['testimoni_user_name'] = $this->input->post('testimoni_user_name');
+            $params['testimoni_user_job'] = $this->input->post('testimoni_user_job');
+            $params['testimoni_user_email'] = $this->input->post('testimoni_user_email');
             $params['testimoni_user_address'] = $this->input->post('testimoni_user_address');
             $params['testimoni_user_comment'] = $this->input->post('testimoni_user_comment');
             $params['testimoni_is_published'] = $this->input->post('testimoni_is_published');
@@ -85,7 +85,7 @@ class Testimoni extends CI_Controller {
                         'user_id' => $this->session->userdata('user_id'),
                         'log_module' => 'Testimoni',
                         'log_action' => $data['operation'],
-                        'log_info' => 'ID:null;Title:' . $params['testimoni_title']
+                        'log_info' => 'ID:null;Name:' . $params['testimoni_user_name']
                     )
             );
 

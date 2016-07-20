@@ -1,29 +1,16 @@
 <div class="slider">
     <ul class="slides">
-        <li data-background="<?php echo media_url() ?>/images/slide/back.png" style="background-size: cover;background-position: center;background-attachment: fixed;  display: block;">
-            <div class="container">
-                <div class="slide-caption col-md-4">
-                    <h2 class="slide-title"><a href="" style="color:#1da1f2;">Dr.Muhammad Nazih</a></h2>
-                    <p style="color:#000;">Tahun ini, genap 12 tahun saya mempercayakan perawatan kulit pada Natasha. Sejak saya SMA hingga kini dimana saya sedang menempuh pendidikan spesialis, Natasha membuat kulit saya tetap sehat di tengah kesibukan yang selalu padat. Memasuki kepala 3, banyak kawan dan pasien menyangka saya masih koas!</p>
+        <?php foreach ($slide as $row): ?>
+            <li data-background="<?php echo upload_url($row['slide_image']) ?>" style="background-size: cover;background-position: center;background-attachment: fixed;  display: block;">
+                <div class="container">
+                    <div class="slide-caption col-md-4">
+                        <h2 class="slide-title"><a href="" style="color:#1da1f2;"><?php echo $row['slide_title'] ?></a></h2>
+                        <p style="color:#000;"><?php echo strip_tags(character_limiter($row['slide_description'], 300)) ?></p>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li data-background="<?php echo media_url() ?>/images/slide/slide-14.jpg" style="background-size: cover;background-position: center;background-attachment: fixed; display: block;">
-            <div class="container">
-                <div class="slide-caption col-md-4">
-                    <h2 class="slide-title"><a href="" style="color:#1da1f2;">Dr.Bopas</a></h2>
-                    <p style="color:#000;">Tahun ini, genap 12 tahun saya mempercayakan perawatan kulit pada Natasha. Sejak saya SMA hingga kini dimana saya sedang menempuh pendidikan spesialis, Natasha membuat kulit saya tetap sehat di tengah kesibukan yang selalu padat. Memasuki kepala 3, banyak kawan dan pasien menyangka saya masih koas! </p>
-                </div>
-            </div>
-        </li>
-        <li data-background="<?php echo media_url() ?>/images/slide/slide-8.jpg" style="background-size: cover;background-position: center;background-attachment: fixed; display: block;">
-            <div class="container">
-                <div class="slide-caption col-md-4">
-                    <h2 class="slide-title"><a href="" style="color:#1da1f2;">Natasha Raih Women’s Health Beauty Choice 2016</a></h2>
-                    <p style="color:#000;">Perkembangan industri kecantikan di Indonesia akhir-akhir ini sangatlah pesat. Berbagai brand baru bermunculan dengan sangat cepat, berlomba-lomba menawarkan keunggulannya masing-masing. </p>
-                </div>
-            </div>
-        </li>
+            </li>
+        <?php endforeach; ?>
+
     </ul>
     <div class="flexslider-controls">
         <div class="container">
@@ -67,244 +54,66 @@
 <div class="fullwidth-block offers-section" data-bg-color="#f8f8f8">
     <div class="container">
         <h2 class="section-title">CATALOG
-            <a href="our-offer.html" class="btn btn-lg btn-primary pull-right wow bounce">List Produk</a></h2>
-            <div class="filter-links filterable-nav">
-                <select class="mobile-filter">
-                    <option value="*">Show all</option>
-                    <option value=".south-america">Man</option>
-                    <option value=".asia">Woman</option>
-                    <option value=".africa">Teen</option>
-                    <option value=".north-america">Hair Series</option>
-                    <option value=".europe">Parfum</option>
-                    <option value=".australia">Bosy Spa</option>	
-                </select>
-                <a href="#" class=" current wow fadeInRight" data-filter="*">Show all</a>
-                <a href="#" class="wow fadeInRight" data-wow-delay=".2s" data-filter=".south-america">Man</a>
-                <a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".asia">Women</a>
-                <a href="#" class="wow fadeInRight" data-wow-delay=".6s" data-filter=".africa">Teen</a>
-                <a href="#" class="wow fadeInRight" data-wow-delay=".8s" data-filter=".north-america">Hair Series</a>
-                <a href="#" class="wow fadeInRight" data-wow-delay="1s" data-filter=".europe">Parfum</a>
-                <a href="#" class="wow fadeInRight" data-wow-delay="1.2s" data-filter=".australia">Body Spa</a>
-            </div>
-            <div class="filterable-items">
-                <div class="filterable-item south-america">
+            <a href="<?php echo site_url('catalog') ?>" class="btn btn-lg btn-primary pull-right wow bounce">List Produk</a></h2>
+        <div class="filter-links filterable-nav">
+            <a href="#" class=" current wow fadeInRight" data-filter="*">Show all</a>
+            <?php foreach ($categories as $row) { ?>
+                <a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".cat<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?></a>
+            <?php } ?>
+        </div>
+
+        <div class="filterable-items">
+            <?php foreach ($catalog as $row): ?>
+                <div class="filterable-item <?php
+                foreach ($cat_has_category as $key) {
+                    if ($row['catalog_id'] == $key['catalog_catalog_id']) {
+                        echo 'cat' . $key['catalog_category_category_id'] . ' ';
+                    }
+                }
+                ?>">
                     <article class="offer-item">
                         <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/garmen.jpeg" alt="" >
+                            <div class="imgLiquidFill imgLiquid" style="height: 190px; width: 359; border-radius: 5px; ">
+                                <img class="img-responsive" src="<?php echo upload_url($row['catalog_image']) ?>" alt="" >
                             </div>
                         </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
+                        <h2 class="entry-title"><a href="<?php echo catalog_url($row) ?>"><?php echo $row['catalog_name'] ?></a></h2>
+                        <p class="category-base"><i>Categori: <?php
+                                foreach ($cat_has_category as $key) {
+                                    if ($row['catalog_id'] == $key['catalog_catalog_id']) {
+                                        echo $key['category_name'] . ', ';
+                                    }
+                                }
+                                ?></i></p>
+                        <div class="">
+                            <a href="<?php echo catalog_url($row) ?>" class="button">Detail</a>
                         </div>
-                        <h2 class="entry-title"><a href="#">GARNIER MAN</a></h2>
-                        <p>Categori: Man</p>
                     </article>
                 </div>
-                <div class="filterable-item asia">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/garnier.jpeg" alt="">
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">GARNIER</a></h2>
-                        <p>Categori: Women</p>
-                    </article>
-                </div>
-                <div class="filterable-item africa">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responeive" src="<?php echo media_url() ?>/images/slide/produk/Pureglow.jpg" alt="">
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">PUREGLOW</a></h2>
-                        <p>Categori: Teen</p>
-                    </article>
-                </div>
-                <div class="filterable-item north-america">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img src="<?php echo media_url() ?>/images/slide/produk/hairspa.jpg" alt="">
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">HAIRSPA</a></h2>
-                        <p>Categori: Hair Series</p>
-                    </article>
-                </div>
-                <div class="filterable-item europe">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/parfum.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">JAGUAR</a></h2>
-                        <p>Categori: Parfum</p>
-                    </article>
-                </div>
-                <div class="filterable-item australia">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/lulur.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">LULUR IBU</a></h2>
-                        <p>Categori: Body Spa</p>
-                    </article>
-                </div>
-                <div class="filterable-item south-america">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/gatsbi.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">GATSBY</a></h2>
-                        <p>Categori: Man</p>
-                    </article>
-                </div>
-                <div class="filterable-item asia">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/wardah.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">WARDAH</a></h2>
-                        <p>Categori: Woman</p>
-                    </article>
-                </div>
-                <div class="filterable-item africa">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/garnier2.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">GARNIER</a></h2>
-                        <p>Categori: Teen</p>
-                    </article>
-                </div>
-                <div class="filterable-item north-america">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/matrik.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="our-offer.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">MATRIK</a></h2>
-                        <p>Categori: Hair Series</p>
-                    </article>
-                </div>
-                <div class="filterable-item europe">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/nature.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">NATURE</a></h2>
-                        <p>Categori: Parfum</p>
-                    </article>
-                </div>
-                <div class="filterable-item australia">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 190px; height: 190px; border-radius: 5px; background-image: url(&quot;media/images/slide/produk/ponds.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                <img class="img-responsive" src="<?php echo media_url() ?>/images/slide/produk/strawberi.jpg" alt="" >
-                            </div>
-                        </figure>
-                        <div class="price pull-right">
-                            <a href="detail.html" class="button">Detail</a>
-                        </div>
-                        <h2 class="entry-title"><a href="#">STRAWBERI</a></h2>
-                        <p>Categori: Body Spa</p>
-                    </article>
-                </div>
-            </div>
+            <?php endforeach; ?>
 
         </div>
 
     </div>
 
-    <div class="fullwidth-block testimonial-section">
-        <div class="container">
-            <h2 class="section-title">Testimonials</h2>
-            <div class="row">
+</div>
+
+<div class="fullwidth-block testimonial-section">
+    <div class="container">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="row">
+            <?php foreach ($testimoni as $row): ?>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="testimonial wow fadeInUp">
-                        <figure class="avatar"><img src="<?php echo media_url() ?>/images/testimoni/foto-1.jpg" alt=""></figure>
+                        <figure class="avatar"><img src="<?php echo upload_url($row['testimoni_user_image']) ?>" alt=""></figure>
                         <div class="testimonial-body">
-                            <p>Tahun ini, genap 12 tahun saya mempercayakan perawatan kulit pada Natasha.</p>
-                            <cite>Jessica Tracy</cite>
-                            <span>Creative agency CEO</span>
+                            <p><?php echo strip_tags(character_limiter($row['testimoni_user_comment'], 100)); ?></p>
+                            <cite><?php echo $row['testimoni_user_name'] ?></cite>
+                            <span><?php echo $row['testimoni_user_job'] ?></span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="testimonial wow fadeInUp" data-wow-delay=".2s">
-                        <figure class="avatar"><img src="<?php echo media_url() ?>/images/testimoni/foto-2.jpg" alt=""></figure>
-                        <div class="testimonial-body">
-                            <p>Tahun ini, genap 12 tahun saya mempercayakan perawatan kulit pada Natasha.</p>
-                            <cite>John Smith</cite>
-                            <span>Traveler</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="testimonial wow fadeInUp" data-wow-delay=".4s">
-                        <figure class="avatar"><img src="<?php echo media_url() ?>/images/testimoni/foto-3.jpeg" alt=""></figure>
-                        <div class="testimonial-body">
-                            <p>Tahun ini, genap 12 tahun saya mempercayakan perawatan kulit pada Natasha.</p>
-                            <cite>Susan Webb</cite>
-                            <span>Hairdresser</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="testimonial wow fadeInUp" data-wow-delay=".6s">
-                        <figure class="avatar"><img src="<?php echo media_url() ?>/images/testimoni/foto-4.jpg" alt=""></figure>
-                        <div class="testimonial-body">
-                            <p>Tahun ini, genap 12 tahun saya mempercayakan perawatan kulit pada Natasha.</p>
-                            <cite>Sarah Brown</cite>
-                            <span>Athlete</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
+</div>

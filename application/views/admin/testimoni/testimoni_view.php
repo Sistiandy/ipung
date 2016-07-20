@@ -18,7 +18,7 @@
                 <?php if (!empty($testimoni['testimoni_user_image'])) { ?>
                     <img src="<?php echo upload_url($testimoni['testimoni_user_image']) ?>" class="img-responsive ava-detail">
                 <?php } else { ?>
-                    <img src="<?php echo base_url('media/image/missing-image.png') ?>" class="img-responsive ava-detail">
+                    <img src="<?php echo base_url('media/images/missing-image.png') ?>" class="img-responsive ava-detail">
                 <?php } ?>
             </div>
             <div class="col-md-10">
@@ -32,7 +32,7 @@
                         <tr>
                             <td>Pekerjaan</td>
                             <td>:</td>
-                            <td><?php echo $testimoni['category_name'] ?></td>
+                            <td><?php echo $testimoni['testimoni_user_job'] ?></td>
                         </tr>
                         <tr>
                             <td>Status</td>
@@ -42,12 +42,7 @@
                         <tr>
                             <td>Tanggal publikasi</td>
                             <td>:</td>
-                            <td><?php echo pretty_date($testimoni['testimoni_published_date']) ?></td>
-                        </tr>
-                        <tr>
-                            <td>Penulis</td>
-                            <td>:</td>
-                            <td><?php echo $testimoni['user_name']; ?></td>
+                            <td><?php echo pretty_date($testimoni['testimoni_input_date']) ?></td>
                         </tr>
                     </tbody>
                 </table>

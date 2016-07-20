@@ -25,7 +25,7 @@
                         <tbody>
                             <tr>
                                 <td ><?php echo $row['testimoni_user_name']; ?></td>
-                                <td ><?php echo $row['testimoni_user_name']; ?></td>
+                                <td ><?php echo $row['testimoni_user_email']; ?></td>
                                 <td ><?php echo pretty_date($row['testimoni_input_date'], 'l, d/m/Y', FALSE); ?></td>
                                 <td ><?php echo ($row['testimoni_is_published'] == 0) ? 'Draft' : 'Terbit'; ?></td>
                                 <td>
