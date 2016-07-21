@@ -29,21 +29,21 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="feature left-icon wow fadeInLeft" data-wow-delay=".3s">
                     <i class="icon-hotel"></i>
-                    <a href=""><h3 class="feature-title">IPUNG SKIN CLINIC CENTER</h3></a>
+                    <h3 class="feature-title">IPUNG SKIN CLINIC CENTER</h3>
                     <p>Natasha Skin Clinic Center memiliki dokter dan para tenaga ahli yang berkompetensi dibidangnya, dengan adanya tim-tim tersebut maka bisa didapatkan kenyamanan anda mengguakan produk sudah terjamin.</p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="feature left-icon wow fadeInLeft">
                     <i class="icon-sun"></i>
-                    <a href=""><h3 class="feature-title">IPUNG SKIN CLINIC CENTER</h3></a>
+                    <h3 class="feature-title">IPUNG SKIN CLINIC CENTER</h3>
                     <p>Ipung Skin Clinic Center dengan konsep Nature Meets Technology yang merupakan perpaduan sempurna antara bahan-bahan aktif kosmetik botanical/herbal dengan alat-alat kecantikan berteknologi tinggi.</p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="feature left-icon wow fadeInRight">
                     <i class="icon-island"></i>
-                    <a href=""><h3 class="feature-title">IPUNG SKIN CLINIC CENTER</h3></a>
+                    <h3 class="feature-title">IPUNG SKIN CLINIC CENTER</h3>
                     <p>Natasha Skin Clinic Center memiliki produk-produk yang menggunakan bahan-bahan botanical yang menggunakan teknologi modern serta memberikan hasil yang optimal dan aman untuk kulit pada usia remaja, pria dan wanita dewasa.</p>
                 </div>
             </div>
@@ -54,7 +54,7 @@
 <div class="fullwidth-block offers-section" data-bg-color="#f8f8f8">
     <div class="container">
         <h2 class="section-title">CATALOG
-            <a href="<?php echo site_url('catalog') ?>" class="btn btn-lg btn-primary pull-right wow bounce">List Produk</a></h2>
+            <a href="<?php echo site_url('catalog') ?>" class="btn btn-lg btn-primary pull-right wow bounce">Daftar Produk</a></h2>
         <div class="filter-links filterable-nav">
             <a href="#" class=" current wow fadeInRight" data-filter="*">Show all</a>
             <?php foreach ($categories as $row) { ?>
@@ -100,7 +100,8 @@
 
 <div class="fullwidth-block testimonial-section">
     <div class="container">
-        <h2 class="section-title">Testimonials</h2>
+        <h2 class="section-title">Testimonials
+        <a href="<?php echo site_url('testimoni') ?>" class="btn btn-lg btn-primary pull-right wow bounce">Daftar Testimoni</a></h2>
         <div class="row">
             <?php foreach ($testimoni as $row): ?>
                 <div class="col-md-3 col-sm-6 col-xs-12">

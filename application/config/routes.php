@@ -54,6 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['(:any)/category/(:num)/(:any).html'] = "$1/category/$2";
 $route['(:any)/detail/(:num)/(:num)/(:num)/(:num)/(:any).html'] = "$1/detail/$5";
 $route['(:any)/detail/(:num)/(:any).html'] = "$1/detail/$2/$3";
+$route['contact.html'] = "contact/index";
+$route['about-us.html'] = "about/index";
 
 $route['admin/(:any)/(:any)/edit/(:num)'] = "admin/$1/add_$2/$3";
 $route['admin/(:any)/(:any)/add'] = "admin/$1/add_$2";

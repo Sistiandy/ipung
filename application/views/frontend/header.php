@@ -32,16 +32,15 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-mobile"></i> Contact Person </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> Contact Person </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="fa fa-phone-square"></i>  098675 </a></li>
+                            <li><a href="#"><i class="fa fa-phone-square"></i>  0812 2810 799 </a></li>
                             <li><a href="#"><i class="fa fa-phone"></i> 089602824560</a></li>
                             <li><a href="#"><i class="fa fa-facebook-square"></i> 08962876288</a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i> @Ipung</a></li>
                             <li><a href="#"><i class="fa fa-instagram"></i> @Ipung</a></li>
                         </ul>
                     </li>
-                    <li class="active"><a href="#"> +1 344 5345 5345  <span class="sr-only">(current)</span></a></li>
                 </ul>
             </div>
         </div>
@@ -61,11 +60,11 @@
                     <nav class="main-navigation">
                         <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
                         <ul class="menu">
-                            <li class="menu-item"><a href="about-us.html">Tentang</a></li>
-                            <li class="menu-item"><a href="our-offer.html">Produk</a></li>
-                            <li class="menu-item"><a href="customer-protection.html">Cabang</a></li>
-                            <li class="menu-item"><a href="galeri.html">Galeri</a></li>
+                            <li class="menu-item"><a href="<?php echo site_url() ?>">Home</a></li>
+                            <li class="menu-item"><a href="<?php echo site_url('catalog') ?>">Produk</a></li>
+                            <li class="menu-item"><a href="<?php echo site_url('testimoni') ?>">Testimoni</a></li>
                             <li class="menu-item"><a href="contact.html">Kontak</a></li>
+                            <li class="menu-item"><a href="<?php echo site_url('about-us.html') ?>">Tentang</a></li>
                         </ul>
                     </nav>
 
