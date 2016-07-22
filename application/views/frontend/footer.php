@@ -65,7 +65,7 @@
     </div>
     <div class="colophon">
         <div class="container">
-            <p class="copy">Copyright 2016 Ipung Cosmetic, @sistiandy All right reserved.</p>
+            <p class="copy">Copyright 2016 Ipung Cosmetics, All right reserved.</p>
         </div>
     </div>
 </footer> <!-- .site-footer -->
