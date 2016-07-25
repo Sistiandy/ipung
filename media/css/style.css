@@ -56,7 +56,7 @@ html {
 }
 body {
   margin: 0;
-  font-family:"Roboto Light";
+  font-family:"Roboto Light" ,OpenSans-Regular;
 }
 article,
 aside,
@@ -2265,6 +2265,7 @@ body {
   }
 }
 .main-navigation .menu li a {
+  font-family: 'Arial';
   padding: 50px 10px;
   display: block;
   text-transform: uppercase;
