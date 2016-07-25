@@ -602,6 +602,7 @@ table {
   padding: 0;
 }
 .testimonial cite {
+  font-family: 'Arial';
   font-weight: 700;
   display: block;
   font-style: normal;
