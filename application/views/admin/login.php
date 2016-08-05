@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>UNG | LOGIN</title>
+    <title>IPUNG | LOGIN</title>
     <link rel="icon" href="<?php echo media_url() ?>/images/favicon.png" type="image/x-icon">
 
     <!-- Bootstrap core CSS -->
