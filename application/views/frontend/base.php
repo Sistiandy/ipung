@@ -53,68 +53,72 @@
 
 <div class="fullwidth-block offers-section" data-bg-color="#f8f8f8">
     <div class="container">
-        <h2 class="section-title">CATALOG
+        <h2 class="section-title">Catalog
             <a href="<?php echo site_url('catalog') ?>" class="btn btn-lg btn-primary pull-right wow bounce">Daftar Produk</a></h2>
-        <div class="filter-links filterable-nav">
-            <a href="#" class=" current wow fadeInRight" data-filter="*">Show all</a>
-            <?php foreach ($categories as $row) { ?>
-                <a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".cat<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?></a>
-            <?php } ?>
-        </div>
+            <div class="filter-links filterable-nav">
+                <a href="#" class=" current wow fadeInRight" data-filter="*">Show all</a>
+                <?php foreach ($categories as $row) { ?>
+                    <a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".cat<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?></a>
+                    <?php } ?>
+                </div>
 
-        <div class="filterable-items">
-            <?php foreach ($catalog as $row): ?>
-                <div class="filterable-item <?php
-                foreach ($cat_has_category as $key) {
-                    if ($row['catalog_id'] == $key['catalog_catalog_id']) {
-                        echo 'cat' . $key['catalog_category_category_id'] . ' ';
-                    }
-                }
-                ?>">
-                    <article class="offer-item">
-                        <figure class="featured-image">
-                            <div class="imgLiquidFill imgLiquid" style="height: 190px; width: 359; border-radius: 5px; ">
-                                <img class="img-responsive" src="<?php echo upload_url($row['catalog_image']) ?>" alt="" >
-                            </div>
-                        </figure>
-                        <h2 class="entry-title"><a href="<?php echo catalog_url($row) ?>"><?php echo $row['catalog_name'] ?></a></h2>
-                        <p class="category-base"><i>Categori: <?php
+                <div class="filterable-items">
+                    <?php foreach ($catalog as $row): ?>
+                        <div class="filterable-item <?php
+                        foreach ($cat_has_category as $key) {
+                            if ($row['catalog_id'] == $key['catalog_catalog_id']) {
+                                echo 'cat' . $key['catalog_category_category_id'] . ' ';
+                            }
+                        }
+                        ?>">
+                        <article class="offer-item">
+                            <figure class="featured-image">
+                                <div class="imgLiquidFill imgLiquid" style="height: 190px; width: 359; border-radius: 5px; ">
+                                    <img class="img-responsive" src="<?php echo upload_url($row['catalog_image']) ?>" alt="" >
+                                </div>
+                            </figure>
+                            <h2 class="entry-title"><a href="<?php echo catalog_url($row) ?>"><?php echo $row['catalog_name'] ?></a></h2>
+                            <p class="category-base"><i>Categori: <?php
                                 foreach ($cat_has_category as $key) {
                                     if ($row['catalog_id'] == $key['catalog_catalog_id']) {
                                         echo $key['category_name'] . ', ';
                                     }
                                 }
                                 ?></i></p>
-                        <div class="">
-                            <a href="<?php echo catalog_url($row) ?>" class="button">Detail</a>
+                                <div class="">
+                                    <a href="<?php echo catalog_url($row) ?>" class="button">Detail</a>
+                                </div>
+                            </article>
                         </div>
-                    </article>
+                    <?php endforeach; ?>
+
                 </div>
-            <?php endforeach; ?>
+
+            </div>
 
         </div>
 
-    </div>
-
-</div>
-
-<div class="fullwidth-block testimonial-section">
-    <div class="container">
-        <h2 class="section-title">Testimonials
-        <a href="<?php echo site_url('testimoni') ?>" class="btn btn-lg btn-primary pull-right wow bounce">Daftar Testimoni</a></h2>
-        <div class="row">
-            <?php foreach ($testimoni as $row): ?>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="testimonial wow fadeInUp">
-                        <figure class="avatar"><img src="<?php echo upload_url($row['testimoni_user_image']) ?>" alt=""></figure>
-                        <div class="testimonial-body">
-                            <p><?php echo strip_tags(character_limiter($row['testimoni_user_comment'], 100)); ?></p>
-                            <cite><?php echo $row['testimoni_user_name'] ?></cite>
-                            <span><?php echo $row['testimoni_user_job'] ?></span>
-                        </div>
+        <div class="fullwidth-block testimonial-section">
+            <div class="container">
+                <h2 class="section-title">Testimonials
+                    <a href="<?php echo site_url('testimoni') ?>" class="btn btn-lg btn-primary pull-right wow bounce">Daftar Testimoni</a></h2>
+                    <div class="row">
+                        <?php foreach ($testimoni as $row): ?>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="testimonial wow fadeInUp" style="max-height: 270px; height: 300px;">
+                                    <figure class="avatar">
+                                        <div class="imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 150px; height: 178px; border-radius: 5px; background-image: url(&quot;<?php echo media_url() ?>/images/-text.png&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                            <img src="<?php echo upload_url($row['testimoni_user_image']) ?>" class="img-responsive" style="display: none;">
+                                        </div>
+                                    </figure>
+                                    <div class="testimonial-body">
+                                        <p><?php echo strip_tags(character_limiter($row['testimoni_user_comment'], 100)); ?></p>
+                                        <cite><?php echo $row['testimoni_user_name'] ?></cite>
+                                        <span><?php echo $row['testimoni_user_job'] ?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</div>
+            </div>
