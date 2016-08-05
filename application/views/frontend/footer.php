@@ -78,7 +78,6 @@
 <script src="<?php echo media_url() ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo media_url() ?>/js/min/plugins-min.js"></script>
 <script src="<?php echo media_url() ?>/js/min/app-min.js"></script>
-<script src="<?php echo media_url() ?>/js/min/app-min.js"></script>
 <script src="<?php echo media_url() ?>/js/imgLiquid-min.js"></script>
 
 <script>
