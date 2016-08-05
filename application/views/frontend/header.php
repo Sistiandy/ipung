@@ -31,7 +31,7 @@
                 <img src="<?php echo media_url() ?>/images/logo-ipung.png" width="30%" alt="Company Name" class="logo hidden-xs">
                 </a>
                 <a class="navbar-brand" href="<?php echo site_url() ?>"> 
-                <p class="hidden-sm">Ipung Cosmetics</p>
+                <p class="hidden-sm hidden-md hidden-lg">Ipung Cosmetics</p>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -58,7 +58,7 @@
                 <div class="header-content">
                     <div class="col-md-3">
                         <div class="branding">
-                            <img src="<?php echo media_url() ?>/images/slide/logo-muka.png" alt="Company Name" class="logo">
+                            <img src="<?php echo media_url() ?>/images/slide/logo-muka.png" alt="Company Name" class="logo hidden-sm">
                             <h1 class="site-title"><a href="index.html"></a></h1>
                             <small class="site-description"></small>
                         </div>
