@@ -105,7 +105,7 @@
                     <div class="row">
                         <?php foreach ($testimoni as $row): ?>
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="testimonial wow fadeInUp" style="max-height: 270px; height: 300px;">
+                                <div class="testimonial wow fadeInUp" style="max-height: 290px; height: 300px;">
                                     <figure class="avatar imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="max-height: 98px; height: 98px; border-radius: 50px; background-image: url(&quot;<?php echo media_url() ?>/images/-text.png&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
                                         <img src="<?php echo upload_url($row['testimoni_user_image']) ?>" class="img-responsive" style="display: none;">
                                     </figure>
