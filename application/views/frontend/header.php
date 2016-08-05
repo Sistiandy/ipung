@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-    <title>ung Cosmetics</title>
+    <title>Ipung Cosmetics</title>
     <link rel="icon" href="<?php echo media_url() ?>/images/favicon.png" type="image/x-icon">
     <!-- Loading third party fonts -->
     <link href="<?php echo media_url() ?>/fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
