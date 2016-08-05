@@ -2295,6 +2295,7 @@ table {
   transition: .3s ease;
   font-size: 12px;
   font-size: 0.99em;
+  margin-right: 20px;
 }
 @media screen and (max-width: 990px) {
   .main-navigation .menu li a {
