@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?php echo site_url() ?>"> 
-                <img src="<?php echo media_url() ?>/images/logo-ipung.png" width="30%" alt="Company Name" class="logo hidden-xs">
+                <img src="<?php echo media_url() ?>/images/logo-ipung.png" width="30%" alt="Company Name" class="logo hidden-xs" style="margin-top:-5px;">
                 </a>
                 <a class="navbar-brand" href="<?php echo site_url() ?>"> 
                 <p class="hidden-sm hidden-md hidden-lg">Ipung Cosmetics</p>

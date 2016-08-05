@@ -2198,8 +2198,9 @@ table {
 
 .branding .logo {
   float: left;
-  margin-right: 20px;
+  margin-right: 10px;
   width: 70%;
+  margin-bottom: 15px;
 }
 .logo2 {
   float: left;
