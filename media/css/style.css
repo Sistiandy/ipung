@@ -2153,7 +2153,7 @@ table {
   height: 0;
 }
 .site-header .branding {
-  padding: 25px 0px -0px 40px;
+  padding: 17px 0px -0px 0px;
   float: left;
   margin-right: 0px;
 }
@@ -2177,7 +2177,7 @@ table {
 .site-header .social-links {
   float: right;
   text-align: right;
-  padding: 45px 40px 20px 0;
+  padding: 53px 10px 0px 76px;
 }
 @media screen and (max-width: 990px) {
   .site-header .social-links {
@@ -2199,8 +2199,8 @@ table {
 .branding .logo {
   float: left;
   margin-right: 10px;
-  width: 65%;
-  margin-bottom: 5px;
+  width: 60%;
+  margin-bottom: 0px;
 }
 .logo2 {
   float: left;
@@ -2295,7 +2295,8 @@ table {
   transition: .3s ease;
   font-size: 12px;
   font-size: 0.99em;
-  margin-right: 20px;
+  margin-right:25px;
+  margin-top: 10px;
 }
 @media screen and (max-width: 990px) {
   .main-navigation .menu li a {
