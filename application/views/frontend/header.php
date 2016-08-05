@@ -58,7 +58,8 @@
                 <div class="header-content">
                     <div class="col-md-3">
                         <div class="branding">
-                            <img src="<?php echo media_url() ?>/images/slide/logo-muka.png" alt="Company Name" class="logo hidden-sm">
+                            <img src="<?php echo media_url() ?>/images/slide/logo-muka.png" alt="Company Name" class="logo hidden-sm hidden-xs">
+                            <img src="<?php echo media_url() ?>/images/slide/logo-muka.png" alt="Company Name" class="logo3 hidden-sm hidden-md hidden-lg">
                             <h1 class="site-title"><a href="index.html"></a></h1>
                             <small class="site-description"></small>
                         </div>

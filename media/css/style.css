@@ -2136,7 +2136,7 @@ table {
 .site-header {
   z-index: 99;
   position: relative;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .site-header .header-content {
   background: white;
@@ -2153,7 +2153,7 @@ table {
   height: 0;
 }
 .site-header .branding {
-  padding: 30px 0px 10px 40px;
+  padding: 25px 0px -0px 40px;
   float: left;
   margin-right: 0px;
 }
@@ -2199,13 +2199,18 @@ table {
 .branding .logo {
   float: left;
   margin-right: 10px;
-  width: 70%;
-  margin-bottom: 15px;
+  width: 65%;
+  margin-bottom: 5px;
 }
 .logo2 {
   float: left;
   margin-right: 20px;
   width: 15%;
+}
+.logo3 {
+  float: left;
+  margin-right: 20px;
+  width: 40%;
 }
 .branding .site-title, .branding .site-description {
   display: table;
