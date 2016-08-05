@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>IPUNG <?php echo isset($title) ? ' | ' . $title : null; ?></title>
-    <link rel="icon" href="<?php echo media_url('ico/favicon.jpg'); ?>" type="image/x-icon">
+    <title>UNG <?php echo isset($title) ? ' | ' . $title : null; ?></title>
+    <link rel="icon" href="<?php echo media_url() ?>/images/favicon.png" type="image/x-icon">
 
     <!-- Bootstrap core CSS -->
 
@@ -56,7 +56,7 @@
                         <div class="left_col scroll-view">
 
                             <div class="navbar nav_title" style="border: 0;">
-                                <a href="index.html" class="site_title"><span>IPUNG COSMETIC</span></a>
+                                <a href="index.html" class="site_title"><span><img src="<?php echo media_url() ?>/images/logo-ipung.png" width="90%" alt="Company Name" class="logo"></span></a>
                             </div>
                             <div class="clearfix"></div>
 

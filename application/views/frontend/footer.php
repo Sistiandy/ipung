@@ -53,7 +53,7 @@
             <div class="container">
                 <div class="branding pull-left">
                     <img src="<?php echo media_url() ?>/images/slide/logo_salon.png" alt="Company Name" class="logo">
-                    <h1 class="site-title"><a href="index.html">Salon Ipung</a></h1>
+                    <h1 class="site-title"><a href="index.html">Ipung Cosmetics</a></h1>
                     <small class="site-description">Skin Beauty Center</small>
                 </div>
 

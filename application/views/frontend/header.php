@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-    <title>Ipung Salon</title>
-    <link rel="icon" href="<?php echo media_url() ?>/images/slide/logo_salon.png" type="image/x-icon">
+    <title>ung Cosmetics</title>
+    <link rel="icon" href="<?php echo media_url() ?>/images/favicon.png" type="image/x-icon">
     <!-- Loading third party fonts -->
     <link href="<?php echo media_url() ?>/fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Loading main css file -->
@@ -27,7 +27,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo site_url() ?>">Salon IPung</a>
+                <a class="navbar-brand" href="<?php echo site_url() ?>"> 
+                <img src="<?php echo media_url() ?>/images/logo-ipung.png" width="30%" alt="Company Name" class="logo"></a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
