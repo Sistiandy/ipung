@@ -28,7 +28,11 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?php echo site_url() ?>"> 
-                <img src="<?php echo media_url() ?>/images/logo-ipung.png" width="30%" alt="Company Name" class="logo"></a>
+                <img src="<?php echo media_url() ?>/images/logo-ipung.png" width="30%" alt="Company Name" class="logo hidden-xs">
+                </a>
+                <a class="navbar-brand" href="<?php echo site_url() ?>"> 
+                <p class="hidden-sm">Ipung Cosmetics</p>
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -52,28 +56,32 @@
         <header class="site-header wow fadeInDown">
             <div class="container">
                 <div class="header-content">
-                    <div class="branding">
-                        <img src="<?php echo media_url() ?>/images/slide/logo_salon.png" alt="Company Name" class="logo">
-                        <h1 class="site-title"><a href="index.html"></a></h1>
-                        <small class="site-description"></small>
+                    <div class="col-md-3">
+                        <div class="branding">
+                            <img src="<?php echo media_url() ?>/images/slide/logo-muka.png" alt="Company Name" class="logo">
+                            <h1 class="site-title"><a href="index.html"></a></h1>
+                            <small class="site-description"></small>
+                        </div>
                     </div>
-
-                    <nav class="main-navigation">
-                        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-                        <ul class="menu">
-                            <li class="menu-item"><a href="<?php echo site_url() ?>">Home</a></li>
-                            <li class="menu-item"><a href="<?php echo site_url('catalog') ?>">Produk</a></li>
-                            <li class="menu-item"><a href="<?php echo site_url('testimoni') ?>">Testimoni</a></li>
-                            <li class="menu-item"><a href="contact.html">Kontak</a></li>
-                            <li class="menu-item"><a href="<?php echo site_url('about-us.html') ?>">Tentang</a></li>
-                        </ul>
-                    </nav>
-
-                    <div class="social-links">
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                    <div class="col-md-6">
+                        <nav class="main-navigation">
+                            <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                            <ul class="menu">
+                                <li class="menu-item"><a href="<?php echo site_url() ?>">Home</a></li>
+                                <li class="menu-item"><a href="<?php echo site_url('catalog') ?>">Produk</a></li>
+                                <li class="menu-item"><a href="<?php echo site_url('testimoni') ?>">Testimoni</a></li>
+                                <li class="menu-item"><a href="contact.html">Kontak</a></li>
+                                <li class="menu-item"><a href="<?php echo site_url('about-us.html') ?>">Tentang</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="social-links">
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
