@@ -56,9 +56,9 @@
         <h2 class="section-title">Catalog
             <a href="<?php echo site_url('catalog') ?>" class="btn btn-lg btn-primary pull-right wow bounce">Daftar Produk</a></h2>
             <div class="filter-links filterable-nav">
-                <a href="#" class=" current wow fadeInRight" data-filter="*">Show all</a>
+                <a href="#" class=" current wow fadeInRight" data-filter="*"><i class="ion-grid"></i> Show all</a>
                 <?php foreach ($categories as $row) { ?>
-                    <a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".cat<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?></a>
+                    <a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".cat<?php echo $row['category_id'] ?>"><i class="ion-pin"></i> <?php echo $row['category_name'] ?></a>
                     <?php } ?>
                 </div>
 
@@ -77,17 +77,18 @@
                                     <img class="img-responsive" src="<?php echo upload_url($row['catalog_image']) ?>" alt="" >
                                 </div>
                             </figure>
+                            <div class="category pull-right">
+                                    <a href="<?php echo catalog_url($row) ?>" class="button"><i class="ion-grid"></i> Detail</a>
+                                </div>
                             <h2 class="entry-title"><a href="<?php echo catalog_url($row) ?>"><?php echo $row['catalog_name'] ?></a></h2>
-                            <p class="category-base"><i>Categori: <?php
+                            <p class="category-base"><i class="ion-bookmark"> Categori: <?php
                                 foreach ($cat_has_category as $key) {
                                     if ($row['catalog_id'] == $key['catalog_catalog_id']) {
                                         echo $key['category_name'] . ', ';
                                     }
                                 }
                                 ?></i></p>
-                                <div class="">
-                                    <a href="<?php echo catalog_url($row) ?>" class="button">Detail</a>
-                                </div>
+                                
                             </article>
                         </div>
                     <?php endforeach; ?>
