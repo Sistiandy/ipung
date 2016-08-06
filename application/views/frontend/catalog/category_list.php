@@ -18,22 +18,22 @@
                                     <img class="img-responsive" src="<?php echo upload_url($row['catalog_image']) ?>" alt="" >
                                 </div>
                             </figure>
-                            <h2 class="entry-title"><a href="<?php echo catalog_url($row) ?>"><?php echo $row['catalog_name'] ?></a></h2>
-                            <p class="category-base"><i>Categori: <?php
-                                    foreach ($cat_has_category as $key) {
-                                        if ($row['catalog_id'] == $key['catalog_catalog_id']) {
-                                            echo $key['category_name'] . ', ';
-                                        }
-                                    }
-                                    ?></i></p>
-                            <div class="">
+                            <div class="category pull-right">
                                 <a href="<?php echo catalog_url($row) ?>" class="button">Detail</a>
                             </div>
-                        </article>
-                    </div>
-                <?php endforeach; ?>
+                            <h2 class="entry-title"><a href="<?php echo catalog_url($row) ?>"><?php echo $row['catalog_name'] ?></a></h2>
+                            <p class="category-base"><i>Categori: <?php
+                                foreach ($cat_has_category as $key) {
+                                    if ($row['catalog_id'] == $key['catalog_catalog_id']) {
+                                        echo $key['category_name'] . ', ';
+                                    }
+                                }
+                                ?></i></p>
+                            </article>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <?php echo $this->pagination->create_links(); ?>
             </div>
-            <?php echo $this->pagination->create_links(); ?>
         </div>
     </div>
-</div>

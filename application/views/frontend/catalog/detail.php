@@ -30,7 +30,7 @@
 
     </div>
 
-    <div class="fullwidth-block" data-bg-color="#f1f1f1">
+    <div class="fullwidth-block" data-bg-color="#f8f8f8">
         <div class="container">
             <h2 class="section-title">Produk Lainya</h2>
             <div class="row">
@@ -42,6 +42,9 @@
                                     <img class="img-responsive" src="<?php echo upload_url($row['catalog_image']) ?>" alt="" >
                                 </div>
                             </figure>
+                             <div class="category pull-right">
+                                <a href="<?php echo catalog_url($row) ?>" class="button">Detail</a>
+                            </div>
                             <h2 class="entry-title"><a href="<?php echo catalog_url($row) ?>"><?php echo $row['catalog_name'] ?></a></h2>
                             <p class="category-base"><i>Categori: <?php
                                     foreach ($cat_has_categories as $key) {
@@ -50,9 +53,7 @@
                                         }
                                     }
                                     ?></i></p>
-                            <div class="">
-                                <a href="<?php echo catalog_url($row) ?>" class="button">Detail</a>
-                            </div>
+                           
                         </article>
                     </div>
                 <?php endforeach; ?>

@@ -105,7 +105,7 @@
                     <a href="<?php echo site_url('testimoni') ?>" class="btn btn-lg btn-primary pull-right wow bounce">Daftar Testimoni</a></h2>
                     <div class="row">
                         <?php foreach ($testimoni as $row): ?>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="col-md-3 col-sm-6 col-xs-6">
                                 <div class="testimonial wow fadeInUp" style="min-height: 290px; height: 320px;">
                                     <figure class="avatar imgLiquidFill imgLiquid imgLiquid_bgSize imgLiquid_ready" style="min-height: 98px; height: 100px; border-radius: 50px; background-image: url(&quot;<?php echo media_url() ?>/images/-text.png&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
                                         <img src="<?php echo upload_url($row['testimoni_user_image']) ?>" class="img-responsive" style="display: none;">
