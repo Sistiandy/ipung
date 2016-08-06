@@ -110,9 +110,9 @@
                                         <img src="<?php echo upload_url($row['testimoni_user_image']) ?>" class="img-responsive" style="display: none;">
                                     </figure>
                                     <div class="testimonial-body">
-                                        <p><?php echo strip_tags(character_limiter($row['testimoni_user_comment'], 100)); ?></p>
                                         <cite><?php echo $row['testimoni_user_name'] ?></cite>
-                                        <span><?php echo $row['testimoni_user_job'] ?></span>
+                                        <span><u><?php echo $row['testimoni_user_job'] ?></u></span>
+                                        <p><?php echo strip_tags(character_limiter($row['testimoni_user_comment'], 100)); ?></p>
                                     </div>
                                 </div>
                             </div>

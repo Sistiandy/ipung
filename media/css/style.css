@@ -610,17 +610,18 @@ table {
   padding: 0;
 }
 .testimonial cite {
-  font-family: 'Arial';
+  font-family: 'Lato';
   font-weight: 700;
   display: block;
   font-style: normal;
   margin-bottom: 0;
   font-size: 13px;
-  font-size: 0.9125em;
+  font-size: 1.2em;
   color: #fe5621;
 }
 .testimonial span {
   font-size: 13px;
+  font-family: sans-serif;
   font-size: 0.8125em;
   font-style: italic;
 }
@@ -774,8 +775,8 @@ table {
   margin: 0 0 50px;
 }
 .filter-links a {
-  border-radius: 3px;
-  border: 1px solid #f1f1f1;
+  border-radius: 20px;
+  border: 1px solid #19bdce;
   display: inline-block;
   padding: 10px 40px;
   margin: 0 5px 10px;
@@ -785,8 +786,8 @@ table {
   transition: .3s ease;
 }
 .filter-links a:hover {
-  border-color: #19bdce;
-  color: #19bdce;
+  border-color: #fc825c;
+  color: #fc825c;
 }
 .filter-links .mobile-filter {
   display: none;
@@ -2143,7 +2144,7 @@ table {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   *zoom: 1;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .site-header .header-content:after {
   content: " ";
@@ -2290,14 +2291,15 @@ table {
   display: block;
   text-transform: uppercase;
   text-decoration: none;
-  color: inherit;
+  color: #3c568f;
   -webkit-transition: .3s ease;
   transition: .3s ease;
   font-size: 12px;
   font-size: 0.99em;
-  margin-right:25px;
+  margin-right:20px;
   margin-top: 10px;
 }
+
 @media screen and (max-width: 990px) {
   .main-navigation .menu li a {
     padding: 20px 10px;
@@ -2374,11 +2376,11 @@ table {
   right: 15px;
   bottom: -80px;
   background: white;
-  opacity: 0.8;
+  opacity: 0.7;
   padding: 30px;
   border-radius: 5px;
-  height: 355px;
-  top: 90px;
+  height: 305px;
+  top: 80px;
   margin: auto;
 }
 @media screen and (max-width: 990px) {
@@ -2464,11 +2466,11 @@ figure img {
   font-size: 13px;
 }
 .site-footer .footer-top {
-  padding: 50px 0;
+  padding: 30px 0;
 }
 .site-footer .footer-bottom {
   background: #f8f8f8;
-  padding: 50px 0;
+  padding: 15px 0;
 }
 .site-footer .branding .site-title {
   font-size: 14px;
@@ -2720,7 +2722,12 @@ figure img {
     margin-top: -30px;
   }
 
-
+.btn-primary {
+    color: #fff;
+    background-color: #1da1f2;
+    border-color: #1da1f2;
+    border-radius: 1px;
+}
 /*============== Style Sistiandy ============*/
 
 .category-base{
